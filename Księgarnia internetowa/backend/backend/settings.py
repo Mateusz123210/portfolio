@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'database.apps.DatabaseConfig'
+    'database.apps.DatabaseConfig',
+    'corsheaders'
 ]
 
 # location - /backend/backend/settings.py
@@ -54,6 +55,13 @@ MIDDLEWARE = [
   "django.contrib.auth.middleware.AuthenticationMiddleware",
   "django.contrib.messages.middleware.MessageMiddleware",
   "django.middleware.clickjacking.XFrameOptionsMiddleware",
+  "corsheaders.middleware.CorsMiddleware",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://booksshop-dr.azurewebsites.net'
 ]
 
 TEMPLATES = [
@@ -93,9 +101,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bookshopdb',
-        'USER': 'bazy',
-        'PASSWORD': 'Danych1%',
-        'HOST': 'book.mysql.database.azure.com',
+        'USER': 'unlogged_person',
+        'PASSWORD': '5Dn%sfr%Jth6',
+        'HOST': 'bookshop.mysql.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {
         	'read_default_file': '/etc/mysql/my.cnf',

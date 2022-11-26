@@ -23,6 +23,6 @@ from backend import views
 urlpatterns = [
   path('', views.return_page),
   path('books/all', views.get_start_page_data),
-  path('books/find/<str:title>/<str:genre>/<str:authorfirstname>/<str:authorsurname>/<str:publisher>/<str:release>/<str:min>/<str:max>/<str:check>', views.find_books),
+  path('books/find/', views.find_books),
   path('book/<int:id>', views.get_book)
 ]
